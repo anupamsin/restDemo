@@ -1,6 +1,7 @@
 package com.cybage.app.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -37,12 +38,12 @@ public class CustomerController {
 	}
 
 	@GetMapping(value = "/customer/{custId}")
-	public ResponseEntity<Customer> getCustomer(@PathVariable("custId") Long custId) throws CustomerNotFoundException {
-		Customer customer = customerService.getCustomer(custId);
-		if (customer == null) {
-			throw new CustomerNotFoundException("Customer with Customer ID " + custId + " not found.");
-		} else
+	public ResponseEntity<Optional<Customer>> getCustomer(@PathVariable("custId") Long custId) throws CustomerNotFoundException {
+		Optional<Customer> customer = customerService.getCustomer(custId);
+		if (customer.isPresent()) {
 			return ResponseEntity.ok().body(customer);
+		} else
+			throw new CustomerNotFoundException("Customer with Customer ID " + custId + " not found.");
 	}
 
 	@PostMapping(value = "/customer")

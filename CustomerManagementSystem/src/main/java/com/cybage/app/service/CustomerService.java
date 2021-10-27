@@ -13,14 +13,14 @@ public class CustomerService {
 	 @Autowired
 	    private CustomerRepository customerRepository;
 
-	    public Customer getCustomer(Long customerId) {
-	        Optional<Customer> optional = customerRepository.findById(customerId);
-	        Customer customer = null;
+	    public Optional<Customer> getCustomer(Long customerId) {
+	        Optional<Customer> customer = customerRepository.findById(customerId);
+	       /* Customer customer = null;
 	        if (optional.isPresent()) {
 	        	customer = optional.get();
 	        } else {
 	            throw new RuntimeException(" Customer not found for id :: " + customerId);
-	        }
+	        }*/
 	        return customer;
 	    }
 
