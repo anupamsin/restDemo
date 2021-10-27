@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,14 +35,16 @@ public class CustomerController {
 		if (customerList.size() == 0) {
 			throw new CustomerNotFoundException("No Customers Found in DB");
 		} else
-			return ResponseEntity.ok().body(customerList);
+//			return ResponseEntity.ok().body(customerList);
+		return new ResponseEntity<>(customerList, HttpStatus.FOUND);
 	}
 
 	@GetMapping(value = "/customer/{custId}")
 	public ResponseEntity<Optional<Customer>> getCustomer(@PathVariable("custId") Long custId) throws CustomerNotFoundException {
 		Optional<Customer> customer = customerService.getCustomer(custId);
 		if (customer.isPresent()) {
-			return ResponseEntity.ok().body(customer);
+//			return ResponseEntity.ok().body(customer);
+			return new ResponseEntity<>(customer,HttpStatus.FOUND);
 		} else
 			throw new CustomerNotFoundException("Customer with Customer ID " + custId + " not found.");
 	}
@@ -54,7 +57,8 @@ public class CustomerController {
 		if (cust == null) {
 			throw new CustomerNotFoundException("Customer Creation Failed");
 		} else
-			return ResponseEntity.ok().body(cust);
+//			return ResponseEntity.ok().body(cust);
+			return new ResponseEntity<>(cust,HttpStatus.CREATED);
 	}
 
 	@PutMapping(value = "/customer")
@@ -66,7 +70,8 @@ public class CustomerController {
 		if (customer2 == null) {
 			throw new CustomerNotFoundException("Customer Edit Failed");
 		} else
-			return ResponseEntity.ok().body(customer2);
+//			return ResponseEntity.ok().body(customer2);
+			return new ResponseEntity<>(customer2,HttpStatus.OK);
 	}
 
 	@DeleteMapping(value = "/customer/{custId}")
@@ -86,7 +91,8 @@ public class CustomerController {
 		if (customerListByName.size() == 0) {
 			throw new CustomerNotFoundException("No Customers Found in DB with Name : "+custName);
 		} else
-			return ResponseEntity.ok().body(customerListByName);
+//			return ResponseEntity.ok().body(customerListByName);
+			return new ResponseEntity<>(customerListByName,HttpStatus.FOUND);
 	}
 	
 	@GetMapping(value = "/customers/findByAddress/{custAddress}")
@@ -95,7 +101,8 @@ public class CustomerController {
 		if (customerListByAddress.size() == 0) {
 			throw new CustomerNotFoundException("No Customers Found in DB with Address : "+custAddress);
 		} else
-			return ResponseEntity.ok().body(customerListByAddress);
+//			return ResponseEntity.ok().body(customerListByAddress);
+			return new ResponseEntity<>(customerListByAddress,HttpStatus.FOUND);
 	}
 	
 	@GetMapping(value = "/customers/findByEmail/{custEmail}")
@@ -104,6 +111,7 @@ public class CustomerController {
 		if (customer == null) {
 			throw new CustomerNotFoundException("Customer with Email ID " + custEmail + " not found.");
 		} else
-			return ResponseEntity.ok().body(customer);
+//			return ResponseEntity.ok().body(customer);
+			return new ResponseEntity<>(customer,HttpStatus.FOUND);
 	}
 }
