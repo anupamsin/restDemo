@@ -40,11 +40,15 @@ public class CustomerService {
 	        return customerRepository.findAll();
 	    }
 
-	/*
-	 * public List<Employee> getEmployeeByName(String empName){ return
-	 * employeeRepository.empListByName(empName); }
-	 * 
-	 * public List<Employee> empSalGreaterThan2K(double salary){ return
-	 * employeeRepository.empSalGreaterThan2K(salary); }
-	 */
+	    public List<Customer> getCustomerByName(String customerName){
+	    	return customerRepository.customerListByName(customerName);
+	    }
+	    
+	    public List<Customer> getCustomerByAddress(String customerAddress){
+	    	return customerRepository.customerListByAddress(customerAddress);
+	    }
+	    
+	    public Customer getCustomerByEmail(String customerEmailId) {
+	    	return customerRepository.customerByEmail(customerEmailId);
+	    }
 }

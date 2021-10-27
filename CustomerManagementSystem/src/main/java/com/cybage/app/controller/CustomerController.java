@@ -78,4 +78,31 @@ public class CustomerController {
 		}
 		return ResponseEntity.ok().body("Customer deletion success");
 	}
+	
+	@GetMapping(value = "/customers/findByName/{custName}")
+	public ResponseEntity<List<Customer>> getEmployeeByName(@PathVariable("custName") String custName){
+		List<Customer> customerListByName =customerService.getCustomerByName(custName);
+		if (customerListByName.size() == 0) {
+			throw new CustomerNotFoundException("No Customers Found in DB with Name : "+custName);
+		} else
+			return ResponseEntity.ok().body(customerListByName);
+	}
+	
+	@GetMapping(value = "/customers/findByAddress/{custAddress}")
+	public ResponseEntity<List<Customer>> getEmployeeByAddress(@PathVariable("custAddress") String custAddress){
+		List<Customer> customerListByAddress =customerService.getCustomerByAddress(custAddress);
+		if (customerListByAddress.size() == 0) {
+			throw new CustomerNotFoundException("No Customers Found in DB with Address : "+custAddress);
+		} else
+			return ResponseEntity.ok().body(customerListByAddress);
+	}
+	
+	@GetMapping(value = "/customers/findByEmail/{custEmail}")
+	public ResponseEntity<Customer> getCustomerByEmail(@PathVariable("custEmail") String custEmail) throws CustomerNotFoundException {
+		Customer customer = customerService.getCustomerByEmail(custEmail);
+		if (customer == null) {
+			throw new CustomerNotFoundException("Customer with Email ID " + custEmail + " not found.");
+		} else
+			return ResponseEntity.ok().body(customer);
+	}
 }
