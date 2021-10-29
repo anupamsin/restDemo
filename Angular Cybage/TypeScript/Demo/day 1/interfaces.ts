@@ -15,13 +15,13 @@ class Emp implements MyInterface{
     }
 }
 
-var empl=new Emp();
+const empl = new Emp();
 empl.getDetails();
-var objects={
-    name:"Anupam",
-    age:25,
-    salary:24000,
-    getFull:()=>"test"
-}
+const objects = {
+    name: "Anupam",
+    age: 25,
+    salary: 24000,
+    getFull: () => "test"
+};
 
 console.log(objects.getFull());

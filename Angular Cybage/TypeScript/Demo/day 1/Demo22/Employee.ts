@@ -1,6 +1,6 @@
 // Inheritance and polymorphism
 
-class Employee{
+export class Employee{
     name: string;
     age: number;
     salary: number;
@@ -18,19 +18,3 @@ class Employee{
 }
 
 
-
-class Manager extends Employee {
-   
-    getDetails(): void {
-        console.log("Inside manager class");
-    }
-
-    getDetailsEmployee():void{        
-        super.getDetails()
-    }
-    
-}
-
-var managerObject = new Manager("Anupam", 25, 14000);
-managerObject.getDetails();
-managerObject.getDetailsEmployee();

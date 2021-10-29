@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -13,39 +14,17 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Person = /** @class */ (function () {
-    // private name: string;
-    // private age: number;
-    // private marks: number;
-    function Person(name, age, marks) {
-        this.name = name;
-        this.age = age;
-        this.marks = marks;
-        this.name = name;
-        this.age = age;
-        this.marks = marks;
-    }
-    Person.prototype.getDetails = function () {
-        console.log("My name is " + this.name + ". My age is " + this.age + ". I secured " + this.marks + " marks.");
-    };
-    return Person;
-}());
+exports.__esModule = true;
+exports.Student = void 0;
+var Person_1 = require("./Person");
 var Student = /** @class */ (function (_super) {
     __extends(Student, _super);
     function Student() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Student.prototype.getDetails = function () {
-        console.log("Inside Student");
+        _super.prototype.getDetails.call(this);
     };
     return Student;
-}(Person));
-var studentObject1 = new Student("Anupam", 25, 80);
-var studentObject2 = new Student("Anup", 23, 75);
-studentObject2.getDetails();
-var stud = [];
-stud.push(studentObject1);
-stud.push(studentObject2);
-stud.forEach(function (element) {
-    console.log(element);
-});
+}(Person_1.Person));
+exports.Student = Student;

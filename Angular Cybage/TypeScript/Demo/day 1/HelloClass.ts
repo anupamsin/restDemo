@@ -4,5 +4,5 @@ class Hello{
     }
 }
 
-var obj=new Hello();
+const obj = new Hello();
 obj.hi();

@@ -1,0 +1,1 @@
+export const msg:string="Hi from local scope";
