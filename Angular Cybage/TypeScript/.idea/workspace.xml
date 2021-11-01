@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="17c4816b-6b6e-4cac-af8b-2b09d6d5b246" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Demo/day 1/testGen.js" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/day 1/testGen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CustomerManagementSystem/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CustomerManagementSystem/pom.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="20IjhhfWKmIuFB3R9mMD186gxQN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="17c4816b-6b6e-4cac-af8b-2b09d6d5b246" name="Default Changelist" comment="" />
+      <created>1635739116752</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635739116752</updated>
+      <workItem from="1635739120329" duration="684000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Demo/Assignment2/optional.js" />
+        <option value="$PROJECT_DIR$/Demo/Assignment/Student.js" />
+        <option value="$PROJECT_DIR$/Demo/Assignment/Person.js" />
+        <option value="$PROJECT_DIR$/Demo/Assignment/Teacher.js" />
+        <option value="$PROJECT_DIR$/Demo/Assignment/College.js" />
+        <option value="$PROJECT_DIR$/Demo/day 1/Demo22/Manager.js" />
+        <option value="$PROJECT_DIR$/Demo/day 1/Demo22/Employee.js" />
+        <option value="$PROJECT_DIR$/Demo/day 1/HelloClass.js" />
+        <option value="$PROJECT_DIR$/Demo/day 1/generics.js" />
+        <option value="$PROJECT_DIR$/Demo/day 1/test.js" />
+        <option value="$PROJECT_DIR$/Demo/day 1/object.js" />
+        <option value="$PROJECT_DIR$/Demo/day 1/testGen.js" />
+        <option value="$PROJECT_DIR$/Demo/day 1/interfaces.js" />
+        <option value="$PROJECT_DIR$/Demo/day 1/Student.js" />
+        <option value="$PROJECT_DIR$/Demo/day 1/first.js" />
+        <option value="$PROJECT_DIR$/Demo/day 1/optionalPara.js" />
+        <option value="$PROJECT_DIR$/Demo/day 1/localScope.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

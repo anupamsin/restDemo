@@ -2,7 +2,7 @@ var A1 = /** @class */ (function () {
     function A1() {
     }
     A1.prototype.cal = function () {
-        return "Hi this is String";
+        console.log("Hi");
     };
     return A1;
 }());
