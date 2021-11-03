@@ -10,9 +10,55 @@
 <body>
   <h3>{{title}}</h3>
   <h4> Developed By {{msg}}</h4>
+  <p>Unformatted:{{msg}}</p>
+  <p>Uppercase:{{msg | uppercase}}</p>
+  <p>Lowercase:{{msg | lowercase}}</p>
   <app-first></app-first>
   <app-second></app-second>
   <app-third></app-third>
   <app-fourth></app-fourth>
+  <button (click)="sayHello()">Click Me</button>
+  <input [(ngModel)]="testString">
+  <p *ngIf="showMe">
+    Hey The Value is True
+  </p>
+  <p *ngIf="!showMe">
+    Hey The Value is False
+  </p>
+  <p *ngIf="showMsg;then block else elseBlock">
+    True
+  </p>
+  <ng-template #elseBlock>
+    False
+  </ng-template>
+  <ng-template #block>
+    True Using Then
+  </ng-template>
+  <h2>Names : </h2>
+  <div *ngFor="let names of name;let i=index;">
+    <ul>
+      <li>{{i+11}}. {{names}}</li>
+    </ul>
+  </div>
+  <div>
+    <h2>Date Pipe</h2>
+    <p>medium date : {{toDate | date:'medium'}}</p>
+    <p>short date : {{toDate | date:'short'}}</p>
+    <p>full date : {{toDate | date:'fullDate'}}</p>
+    <p>long date : {{toDate | date:'longDate'}}</p>
+    <p>medium date : {{toDate | date:'mediumDate'}}</p>
+    <p>short date : {{toDate | date:'shortDate'}}</p>
+    <p>medium time : {{toDate | date:'mediumTime'}}</p>
+    <p>dd-MM-y : {{toDate | date:'dd-MM-y'}}</p>
+  </div>
+  <div>
+    <h2>Conversion</h2>
+    <p>Percent : {{2.5|percent}}</p>
+    <p>{{num1 | percent:'2.2-5'}}</p>
+    <p>{{num2 | number}}</p>
+  </div>
+  <div>
+    <h2>Custom Pipes</h2>
+  </div>
 </body>
 </html>
