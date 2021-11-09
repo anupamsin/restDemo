@@ -11,6 +11,8 @@ export class FirstComponent implements OnInit {
 
   constructor() { }
 
+  parentNum:number = 20;
+
   ngOnInit(): void {
   }
 

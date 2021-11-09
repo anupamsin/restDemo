@@ -1,0 +1,25 @@
+<h1>{{title}}</h1>
+<!-- <ul *ngFor="let movie of movies">
+  <li><button (click)="onSelect(movie)">{{movie}}</button></li>
+</ul> -->
+<div class="card" *ngFor="let movie of moviess">
+  <img class="card-img-top" [src]="movie.poster" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{movie.title}}</h5>
+    <p class="card-text">Director Name : {{movie.directorName}}</p>
+    <h6>{{movie.releaseDate}}</h6>>
+    <button (click)="onSelect(movie)" class="btn-primary btn-lg">Add to Watched</button>
+  </div>
+</div>
+<br/>
+<hr><hr>
+<h2>{{title1}}</h2>
+<div class="card" *ngFor="let movie of watchedMovies">
+  <img class="card-img-top" [src]="movie.poster" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{movie.title}}</h5>
+    <p class="card-text">Director Name : {{movie.directorName}}</p>
+    <h6>{{movie.releaseDate}}</h6>>
+    <button (click)="onSelectRemove(movie)" class="btn-danger btn-lg">Remove from Watched</button>
+  </div>
+</div>

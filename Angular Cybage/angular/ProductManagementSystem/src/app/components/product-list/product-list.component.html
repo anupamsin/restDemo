@@ -1,0 +1,26 @@
+<h2 style="text-align:center">List of Products</h2>
+<div style="text-align:center" class="search">
+  Search : <input type="text" [(ngModel)]="searchBy"><br>
+  We are searching by : {{searchBy}}<br>
+</div>
+<div class="card-group">
+    <div *ngFor="let prod of product | search  : searchBy" class="product">
+      <div class="col-lg-4">
+      <div class="card" style="width: 12rem;">
+        <img class="card-img-top" [src]="prod.image" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{prod.name}}</h5>
+          <h3>Rs.{{prod.price}}</h3>
+          <p class="card-text">{{prod.description}}</p>
+          <!--        <h3>{{prod.productFlag | custom}}</h3>-->
+          <button *ngIf="prod.productFlag==true;else otherMsg" class="btn btn-primary">Buy</button>
+          <button class="btn btn-primary" (click)="toggleImage(prod)">Toggle Buy/Sold</button>
+          <ng-template #otherMsg>
+            <button class="btn btn-primary" disabled>Sold!</button>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

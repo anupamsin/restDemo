@@ -1,0 +1,18 @@
+li {
+  font-size: 1rem;
+  color: red;
+}
+
+h1 {
+  color: red;
+}
+
+img {
+  width: 15%;
+  height: auto;
+}
+
+#work {
+  color: chartreuse;
+}
+/*# sourceMappingURL=chores-list.component.css.map */
