@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {IMovie} from "../../IMovie";
-import {Movie} from "../../../../../angular-assign/src/app/movie";
 
 @Component({
   selector: 'app-movie-list',
@@ -24,15 +23,15 @@ export class MovieListComponent implements OnInit {
     {id:4,category:"Action",title:"The Incredibles",poster:"https://th.bing.com/th/id/OIP.nrxqxBxPDG7bIUmcFneljwHaEo?w=276&h=180&c=7&r=0&o=5&pid=1.7",directorName:"Apurv Gupta",releaseDate:"20/07/2021"}];
 
   title1:string="Movies Watched";
-  watchedMovies:Movie[]=[];
+  watchedMovies:IMovie[]=[];
   searchBy: string="";
 
-  onSelect(movie:Movie):void{
+  onSelect(movie:IMovie):void{
     this.watchedMovies.push(movie);
     this.movies=this.movies.filter(obj=>obj !== movie);
   }
 
-  onSelectRemove(movie:Movie):void{
+  onSelectRemove(movie:IMovie):void{
     this.movies.push(movie);
     this.watchedMovies=this.watchedMovies.filter(obj=>obj !== movie);
   }
