@@ -1,0 +1,39 @@
+
+<div class="row">
+  <div class="col-lg-6">
+    <h1>{{title}}</h1>
+    <!-- <ul *ngFor="let movie of movies">
+      <li><button (click)="onSelect(movie)">{{movie}}</button></li>
+    </ul> -->
+    <div style="text-align:center" class="search">
+      Search : <input type="text" [(ngModel)]="searchBy"><br>
+      We are searching by : {{searchBy}}<br>
+    </div>
+
+    <div class="card" *ngFor="let movie of movies | searchMovie  : searchBy ">
+      <img [src]="movie.poster" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{movie.title}}</h5>
+        <p class="card-text">Director Name : {{movie.directorName  | addHyphen : '-'| uppercase}}</p>
+        <!--      <h6>Release Date : {{toDate| date : 'shortDate'}}</h6>>-->
+        <h6>Release Date : {{movie.releaseDate}}</h6>>
+        <button (click)="onSelect(movie)" class="btn-primary btn-lg">Add to Watched</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <h2>{{title1}}</h2>
+    <br><br>
+    <div class="card" *ngFor="let movie of watchedMovies">
+      <img class="card-img-top" [src]="movie.poster" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{movie.title}}</h5>
+        <p class="card-text">Director Name : {{movie.directorName}}</p>
+        <!--      <h6>Release Date : {{toDate| date : 'shortDate'}}</h6>>-->
+        <h6>Release Date : {{movie.releaseDate}}</h6>>
+        <button (click)="onSelectRemove(movie)" class="btn-danger btn-lg">Remove from Watched</button>
+      </div>
+    </div>
+  </div>
+</div>
+

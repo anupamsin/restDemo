@@ -1,0 +1,28 @@
+<h1>{{title}}</h1>
+<ul *ngFor="let chore of chores">
+  <li>{{chore}}</li>
+</ul>
+<h1>{{title1}}</h1>
+<ul *ngFor="let chore1 of chores1">
+  <li>{{chore1}}</li>
+</ul>
+<h1>{{title2}}</h1>
+<ul *ngFor="let chore2 of chores2">
+  <li>{{chore2}}</li>
+</ul>
+
+<p *ngIf="chores1.length>chores.length" id="work">Work harder!</p>
+<div *ngIf="chores1.length==0 || chores1.length>=chores.length+3; else otherMsg">
+  <img src="https://www.generatormix.com/images/cartoon/tom.jpg" alt="Image Load failed">
+</div>
+<ng-template #otherMsg>
+  <p>No Allowance  yet</p>
+</ng-template>
+<div *ngIf="chores1.length==0 && chores.length>=4;else otherContent">
+  <h2>Ice cream treat!</h2>
+</div>
+<ng-template #otherContent>
+  <h3><p>How to earn an ice cream</p></h3>
+</ng-template>
+
+
