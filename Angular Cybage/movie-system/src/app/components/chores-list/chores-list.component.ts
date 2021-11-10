@@ -20,7 +20,11 @@ export class ChoresListComponent implements OnInit {
   chores2:string[]=['Empty dishwasher again','Play with launch code','Groceries Again'];
 
   choresList:IChores[]=[
-    {taskName:"Task 1",assignedDate:"20/07/2020",completionDate:"25/07/2020",createdBy:"Anupam",completedBy:"Abhi",completionTime:new Date().getTime().toLocaleString()}
+    {taskName:"Task 1",assignedDate:"20/07/2020",completionDate:"25/07/2020",createdBy:"Anupam",completedBy:"Abhi",completionTime:new Date().toLocaleTimeString()},
+    {taskName:"Task 2",assignedDate:"21/07/2020",completionDate:"26/07/2020",createdBy:"Anup",completedBy:"Anupam",completionTime:new Date().toLocaleTimeString()},
+    {taskName:"Task 3",assignedDate:"22/07/2020",completionDate:"27/07/2020",createdBy:"Anmol",completedBy:"Anup",completionTime:new Date().toLocaleTimeString()},
+    {taskName:"Task 4",assignedDate:"23/07/2020",completionDate:"28/07/2020",createdBy:"Apurv",completedBy:"Anmol",completionTime:new Date().toLocaleTimeString()},
+    {taskName:"Task 5",assignedDate:"24/07/2020",completionDate:"29/07/2020",createdBy:"Arpit",completedBy:"Apurv",completionTime:new Date().toLocaleTimeString()}
   ];
 
   constructor() { }
