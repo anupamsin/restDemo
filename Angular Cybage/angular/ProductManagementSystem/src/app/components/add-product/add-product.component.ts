@@ -13,7 +13,9 @@ export class AddProductComponent implements OnInit {
         id:new FormControl(),
         pName:new FormControl(),
         pPrice:new FormControl(),
-        pImage:new FormControl()
+        pImage:new FormControl(),
+        pDescription:new FormControl(),
+        pFlag:new FormControl()
   });
 
   constructor() { }
