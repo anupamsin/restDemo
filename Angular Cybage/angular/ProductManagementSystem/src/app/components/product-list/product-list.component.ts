@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IProduct} from "../../../IProduct";
+import {ActivatedRoute, Router} from "@angular/router";
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -7,7 +8,7 @@ import {IProduct} from "../../../IProduct";
 })
 export class ProductListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router:Router) { }
 
   ngOnInit(): void {
   }
@@ -25,4 +26,7 @@ export class ProductListComponent implements OnInit {
   ];
   searchBy: string="";
 
+  navigateTo(id: any) {
+      this._router.navigate(["/product/" + id]);
+  }
 }

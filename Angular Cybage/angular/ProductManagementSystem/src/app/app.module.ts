@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,10 @@ import {ConvertSpacePipe} from "./pipes/convert-space.pipe";
 import { HeaderComponent } from './components/header/header.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { FooterComponent } from './components/footer/footer.component';
+import { NavigationComponent } from './nav/navigation/navigation.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 
 @NgModule({
@@ -20,12 +24,17 @@ import { FooterComponent } from './components/footer/footer.component';
     ConvertSpacePipe,
     HeaderComponent,
     SearchPipe,
-    FooterComponent
+    FooterComponent,
+    NavigationComponent,
+    AddProductComponent,
+    HomePageComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
