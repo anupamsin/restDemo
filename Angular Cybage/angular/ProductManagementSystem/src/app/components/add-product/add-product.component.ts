@@ -23,7 +23,13 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(productForm: FormGroup) {
-    console.log(productForm);
+  onSubmit() {
+    if(this.productForm.valid) {
+      console.log(this.productForm.value);
+      alert("Product Form Validation Success")
+    }else{
+      alert("Product Form Validation Failed!! Please Enter All Values")
+    }
   }
+
 }

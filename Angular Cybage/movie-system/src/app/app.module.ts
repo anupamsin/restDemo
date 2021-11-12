@@ -9,7 +9,7 @@ import { AddHyphenPipe } from './pipes/movie-pipes/add-hyphen.pipe';
 import { SearchMoviePipe } from './pipes/movie-pipes/search-movie.pipe';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { SortByDatePipe } from './pipes/movie-pipes/sort-by-date.pipe';
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
@@ -27,6 +27,10 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddMovieUsingTemplateComponent } from './components/add-movie-using-template/add-movie-using-template.component';
+import { NavigationComponent } from './nav/navigation/navigation.component';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { TaskInfoReactiveComponent } from './components/task-info-reactive/task-info-reactive.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SearchMoviePipe,
     HeaderComponent,
     FooterComponent,
-    SortByDatePipe
+    SortByDatePipe,
+    AddMovieUsingTemplateComponent,
+    NavigationComponent,
+    MovieDetailComponent,
+    TaskInfoReactiveComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +66,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

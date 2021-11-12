@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IMovie} from "../../IMovie";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-movie-list',
@@ -11,7 +12,7 @@ export class MovieListComponent implements OnInit {
   title:string="Movies to Watch";
   toDate=new Date();
 
-  constructor() { }
+  constructor(private _router:Router) { }
 
   ngOnInit(): void {
     this.movies = this.movies.sort((a,b)=>0-(a.releaseDate>b.releaseDate ? -1 : 1));
@@ -34,5 +35,9 @@ export class MovieListComponent implements OnInit {
   onSelectRemove(movie:IMovie):void{
     this.movies.push(movie);
     this.watchedMovies=this.watchedMovies.filter(obj=>obj !== movie);
+  }
+
+  navigateTo(id: any) {
+    this._router.navigate(["/movie/" + id]);
   }
 }

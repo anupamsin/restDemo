@@ -1,0 +1,65 @@
+<form #movieForm="ngForm" (ngSubmit)="onSubmit(movieForm)">
+
+  Movie ID : <input type="text" placeholder="id"
+         required maxlength="5"
+         [(ngModel)]="id" name="id"
+         #pickedId="ngModel">
+  <div *ngIf="!pickedId.valid && pickedId.touched">
+   ID is required!
+  </div>
+<br>
+  Category : <input type="text" placeholder="category"
+         required maxlength="30"
+         [(ngModel)]="category" name="category"
+         #pickedCategory="ngModel">
+  <div *ngIf="!pickedCategory.valid && pickedCategory.touched">
+    Category is required!
+  </div>
+
+  <br>
+  Movie Title : <input type="text" placeholder="title"
+                    required maxlength="50" minlength="5"
+                    [(ngModel)]="title" name="title"
+                    #pickedTitle="ngModel">
+  <div *ngIf="!pickedTitle.valid && pickedTitle.touched">
+    Title is required and min length must be 5
+  </div>
+
+  <br>
+  Movie Poster URL : <input type="url" placeholder="poster url"
+                       required
+                       [(ngModel)]="poster" name="poster"
+                       #pickedPoster="ngModel">
+  <div *ngIf="!pickedPoster.valid && pickedPoster.touched">
+    Poster URL is required!
+  </div>
+
+  <br>
+  Director Name : <input type="text" placeholder="director name"
+                            required minlength="1"
+                            [(ngModel)]="directorName" name="directorName"
+                            #pickedDirector="ngModel">
+  <div *ngIf="!pickedDirector.valid && pickedDirector.touched">
+    Director Name is required!
+  </div>
+
+  <br>
+  Release Date : <input type="date" placeholder="release date"
+                         required
+                         [(ngModel)]="releaseDate" name="releaseDate"
+                         #pickedRelease="ngModel">
+  <div *ngIf="!pickedRelease.valid && pickedRelease.touched">
+    Release Date is required!
+  </div>
+
+  <br>
+  <br>
+  <button type="submit" [disabled]="!movieForm.form.valid">
+    Register
+  </button>
+
+  <button type="button" (click)="movieForm.reset()">
+    Reset
+  </button>
+
+</form>

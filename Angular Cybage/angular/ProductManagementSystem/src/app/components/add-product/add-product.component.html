@@ -4,36 +4,41 @@
       <div class="form-content">
         <div class="form-items">
           <h3>Add Product</h3>
-          <form class="requires-validation" novalidate [formGroup]="productForm" (ngSubmit)="onSubmit(productForm)">
+          <form novalidate [formGroup]="productForm" (ngSubmit)="onSubmit()">
 
             <div class="col-md-12">
               <input class="form-control" type="number" placeholder="Product ID" formControlName="id" required>
-              <div class="valid-feedback">Product Id field is valid!</div>
-              <div class="invalid-feedback">Product Id field cannot be blank!</div>
+              <div *ngIf="productForm.controls['id'].hasError('required') &&  productForm.controls['id'].touched" class="bg-danger">
+                Product Id field cannot be blank!
+              </div>
             </div>
 
             <div class="col-md-12">
               <input class="form-control" type="text" placeholder="Product Name" required formControlName="pName">
-              <div class="valid-feedback">Product Name field is valid!</div>
-              <div class="invalid-feedback">Product Name field cannot be blank!</div>
+              <div *ngIf="productForm.controls['pName'].hasError('required') &&  productForm.controls['pName'].touched" class="bg-danger">
+                Product Name field cannot be blank!
+              </div>
             </div>
 
             <div class="col-md-12 mt-3">
               <input class="form-control" type="number" placeholder="Product Price" formControlName="pPrice" required>
-              <div class="valid-feedback">Product Price field is valid!</div>
-              <div class="invalid-feedback">Product Price field cannot be blank!</div>
+              <div *ngIf="productForm.controls['pPrice'].hasError('required') &&  productForm.controls['pPrice'].touched" class="bg-danger">
+                Product Price field cannot be blank!
+              </div>
             </div>
 
             <div class="col-md-12">
               <input class="form-control" type="text" placeholder="Product Image Link" formControlName="pImage" required>
-              <div class="valid-feedback">Product Image field is valid!</div>
-              <div class="invalid-feedback">Product Image field cannot be blank!</div>
+              <div *ngIf="productForm.controls['pImage'].hasError('required') &&  productForm.controls['pImage'].touched" class="bg-danger">
+                Product Image Link field cannot be blank!
+              </div>
             </div>
 
             <div class="col-md-12 mt-3">
               <textarea class="form-control" rows="3" placeholder="Add Description" required formControlName="pDescription"></textarea>
-              <div class="valid-feedback">Product Image field is valid!</div>
-              <div class="invalid-feedback">Product Image field cannot be blank!</div>
+              <div *ngIf="productForm.controls['pDescription'].hasError('required') &&  productForm.controls['pDescription'].touched" class="bg-danger">
+                Description field cannot be blank!
+              </div>
             </div>
 
             <!-- <div class="col-md-12">

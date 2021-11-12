@@ -1,0 +1,72 @@
+<div class="form-body body">
+  <div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <h3>Add Movie</h3>
+          <form novalidate [formGroup]="addTaskForm" (ngSubmit)="onSubmit()">
+            <div class="col-md-12">
+              <input class="form-control" type="text" placeholder="Task Name" required formControlName="taskName">
+              <div *ngIf="addTaskForm.controls['taskName'].hasError('required') &&  addTaskForm.controls['taskName'].touched" class="bg-danger">
+                Task Name field cannot be blank!
+              </div>
+            </div>
+            <div class="col-md-12">
+              <select class="form-select mt-3" required formControlName="taskType">
+                <option selected disabled value="">Task Type</option>
+                <option value="daily">Daily</option>
+                <option value="home">Home</option>
+                <option value="office">Office</option>
+              </select>
+              <div *ngIf="addTaskForm.controls['taskType'].hasError('required') &&  addTaskForm.controls['taskType'].touched" class="bg-danger">
+                Task Type field cannot be blank!
+              </div>
+            </div>
+            <div class="col-md-12 mt-3">
+              <label class="mb-3 mr-1" >Task Status : </label>
+
+              <input type="radio" class="btn-check" name="taskStatus" formControlName="taskStatus" id="true" autocomplete="off" required value="true">
+              <label class="btn btn-sm btn-outline-secondary" for="true">Done</label>
+
+              <input type="radio" class="btn-check" name="taskStatus" formControlName="taskStatus" id="false" autocomplete="off" required value="false">
+              <label class="btn btn-sm btn-outline-secondary" for="false">Not Done</label>
+              <div *ngIf="addTaskForm.controls['taskStatus'].hasError('required') &&  addTaskForm.controls['taskStatus'].touched" class="bg-danger">
+                Task Status field cannot be blank!
+              </div>
+            </div>
+
+            <!--<div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required ngModel>
+              <label class="form-check-label">I confirm that all data are correct</label>
+              <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+            </div>-->
+            <div class="col-md-12 mt-3">
+              <input class="form-control" type="text" placeholder="Assigned By" required formControlName="assignedBy">
+              <div *ngIf="addTaskForm.controls['assignedBy'].hasError('required') &&  addTaskForm.controls['assignedBy'].touched" class="bg-danger">
+                Assigned By field cannot be blank!
+              </div>
+            </div>
+
+            <div class="col-md-12 mt-3">
+              <input class="form-control" type="text" placeholder="Assigned To" required formControlName="assignedTo">
+              <div *ngIf="addTaskForm.controls['assignedTo'].hasError('required') &&  addTaskForm.controls['assignedTo'].touched" class="bg-danger">
+                Assigned To field cannot be blank!
+              </div>
+            </div>
+
+            <div class="col-md-12 mt-3">
+              <input class="form-control" type="date" placeholder="Date Assigned" required formControlName="duration">
+              <div *ngIf="addTaskForm.controls['duration'].hasError('required') &&  addTaskForm.controls['duration'].touched" class="bg-danger">
+                Date Assigned field cannot be blank!
+              </div>
+            </div>
+
+            <div class="form-button mt-3">
+              <button id="submit" type="submit" class="btn btn-primary">Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
