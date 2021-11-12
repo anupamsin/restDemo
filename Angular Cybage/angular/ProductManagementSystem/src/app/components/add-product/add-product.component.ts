@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, NgForm} from "@angular/forms";
+import {FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 import {IProduct} from "../../../IProduct";
 
 @Component({
@@ -10,12 +10,12 @@ import {IProduct} from "../../../IProduct";
 export class AddProductComponent implements OnInit {
 
   productForm=new FormGroup({
-        id:new FormControl(),
-        pName:new FormControl(),
-        pPrice:new FormControl(),
-        pImage:new FormControl(),
-        pDescription:new FormControl(),
-        pFlag:new FormControl()
+        id:new FormControl('',[Validators.required]),
+        pName:new FormControl('',[Validators.required]),
+        pPrice:new FormControl('',[Validators.required]),
+        pImage:new FormControl('',[Validators.required]),
+        pDescription:new FormControl('',[Validators.required]),
+        pFlag:new FormControl('',[Validators.required])
   });
 
   constructor() { }
@@ -23,7 +23,7 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  test(productForm: FormGroup) {
+  onSubmit(productForm: FormGroup) {
     console.log(productForm);
   }
 }
