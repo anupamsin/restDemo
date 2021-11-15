@@ -1,0 +1,15 @@
+<h2 style="text-align:center">List of Employees</h2>
+<div class="card-group">
+  <div *ngFor="let emp of employee">
+    <div class="col-lg-4">
+      <div class="card" style="width: 12rem;">
+        <img class="card-img-top" [src]="imgLink" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{emp.empName}}</h5>
+          <h3>{{emp.position}}</h3>
+          <p class="card-text">{{emp.salary}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

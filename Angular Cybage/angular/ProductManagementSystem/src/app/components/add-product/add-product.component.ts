@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
-import {IProduct} from "../../../IProduct";
+import { ProductService } from 'src/app/utility/product.service';
 
 @Component({
   selector: 'app-add-product',
@@ -10,15 +10,15 @@ import {IProduct} from "../../../IProduct";
 export class AddProductComponent implements OnInit {
 
   productForm=new FormGroup({
-        id:new FormControl('',[Validators.required]),
-        pName:new FormControl('',[Validators.required]),
-        pPrice:new FormControl('',[Validators.required]),
-        pImage:new FormControl('',[Validators.required]),
-        pDescription:new FormControl('',[Validators.required]),
-        pFlag:new FormControl('',[Validators.required])
+    id:new FormControl('',[Validators.required]),
+    name:new FormControl('',[Validators.required]),
+    price:new FormControl('',[Validators.required]),
+    image:new FormControl('',[Validators.required]),
+    description:new FormControl('',[Validators.required]),
+    productFlag:new FormControl('',[Validators.required])
   });
 
-  constructor() { }
+  constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +26,8 @@ export class AddProductComponent implements OnInit {
   onSubmit() {
     if(this.productForm.valid) {
       console.log(this.productForm.value);
-      alert("Product Form Validation Success")
+      alert("Product Form Validation and Addition is Success");
+      this.productService.addProduct(this.productForm.value);
     }else{
       alert("Product Form Validation Failed!! Please Enter All Values")
     }

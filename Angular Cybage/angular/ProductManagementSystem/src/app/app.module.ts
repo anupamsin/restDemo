@@ -14,6 +14,9 @@ import { NavigationComponent } from './nav/navigation/navigation.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import {HttpClientModule} from "@angular/common/http";
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 
 
 @NgModule({
@@ -28,13 +31,16 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     NavigationComponent,
     AddProductComponent,
     HomePageComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    EmployeeListComponent,
+    AddEmployeeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

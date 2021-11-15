@@ -4,7 +4,7 @@
       <div class="form-content">
         <div class="form-items">
           <h3>Add Product</h3>
-          <form novalidate [formGroup]="productForm" (ngSubmit)="onSubmit()">
+          <form novalidate [formGroup]="productForm">
 
             <div class="col-md-12">
               <input class="form-control" type="number" placeholder="Product ID" formControlName="id" required>
@@ -14,29 +14,29 @@
             </div>
 
             <div class="col-md-12">
-              <input class="form-control" type="text" placeholder="Product Name" required formControlName="pName">
-              <div *ngIf="productForm.controls['pName'].hasError('required') &&  productForm.controls['pName'].touched" class="bg-danger">
+              <input class="form-control" type="text" placeholder="Product Name" required formControlName="name">
+              <div *ngIf="productForm.controls['name'].hasError('required') &&  productForm.controls['name'].touched" class="bg-danger">
                 Product Name field cannot be blank!
               </div>
             </div>
 
             <div class="col-md-12 mt-3">
-              <input class="form-control" type="number" placeholder="Product Price" formControlName="pPrice" required>
-              <div *ngIf="productForm.controls['pPrice'].hasError('required') &&  productForm.controls['pPrice'].touched" class="bg-danger">
+              <input class="form-control" type="number" placeholder="Product Price" formControlName="price" required>
+              <div *ngIf="productForm.controls['price'].hasError('required') &&  productForm.controls['price'].touched" class="bg-danger">
                 Product Price field cannot be blank!
               </div>
             </div>
 
             <div class="col-md-12">
-              <input class="form-control" type="text" placeholder="Product Image Link" formControlName="pImage" required>
-              <div *ngIf="productForm.controls['pImage'].hasError('required') &&  productForm.controls['pImage'].touched" class="bg-danger">
+              <input class="form-control" type="text" placeholder="Product Image Link" formControlName="image" required>
+              <div *ngIf="productForm.controls['image'].hasError('required') &&  productForm.controls['image'].touched" class="bg-danger">
                 Product Image Link field cannot be blank!
               </div>
             </div>
 
             <div class="col-md-12 mt-3">
-              <textarea class="form-control" rows="3" placeholder="Add Description" required formControlName="pDescription"></textarea>
-              <div *ngIf="productForm.controls['pDescription'].hasError('required') &&  productForm.controls['pDescription'].touched" class="bg-danger">
+              <textarea class="form-control" rows="3" placeholder="Add Description" required formControlName="description"></textarea>
+              <div *ngIf="productForm.controls['description'].hasError('required') &&  productForm.controls['description'].touched" class="bg-danger">
                 Description field cannot be blank!
               </div>
             </div>
@@ -60,12 +60,12 @@
             </div> -->
 
             <div class="col-md-12 mt-3">
-              <label class="mb-3 mr-1" for="flag">Product Flag: </label>
+              <label class="mb-3 mr-1" for="productFlag">Product Flag: </label>
 
-              <input type="radio" class="btn-check" name="pFlag" formControlName="pFlag" id="true" autocomplete="off" required value="true">
+              <input type="radio" class="btn-check" name="productFlag" formControlName="productFlag" id="true" autocomplete="off" required value="true">
               <label class="btn btn-sm btn-outline-secondary" for="true">True</label>
 
-              <input type="radio" class="btn-check" name="pFlag" formControlName="pFlag" id="false" autocomplete="off" required value="false">
+              <input type="radio" class="btn-check" name="productFlag" formControlName="productFlag" id="false" autocomplete="off" required value="false">
               <label class="btn btn-sm btn-outline-secondary" for="false">False</label>
 
               <div class="valid-feedback mv-up">You selected a Product Flag!</div>
@@ -80,7 +80,7 @@
 
 
             <div class="form-button mt-3">
-              <button id="submit" type="submit" class="btn btn-primary">Add</button>
+              <button id="submit" type="submit" class="btn btn-primary" (click)="onSubmit()">Add</button>
             </div>
           </form>
         </div>
