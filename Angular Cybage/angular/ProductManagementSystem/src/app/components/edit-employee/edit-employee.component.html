@@ -1,0 +1,35 @@
+<div class="form-body body">
+  <div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <h3>Update Employee</h3>
+          <form novalidate *ngIf="employee" [formGroup]="employeeForm">
+
+            <div class="col-md-12">
+              <input class="form-control" type="text" placeholder="ID" value="{{empNo}}" formControlName="empNo" readonly>
+            </div>
+
+            <div class="col-md-12">
+              <input class="form-control" type="text" placeholder="Employee Name" formControlName="empName" [value]="empName">
+            </div>
+
+            <div class="col-md-12 mt-3">
+              <input class="form-control" type="text" placeholder="Employee Designation" formControlName="position" [value]="position">
+            </div>
+
+            <div class="col-md-12 mt-3">
+              <input class="form-control" type="number" placeholder="Salary"  formControlName="salary" [value]="salary">
+
+            </div>
+
+            <div class="form-button mt-3">
+              <button id="submit" type="submit" class="btn btn-primary m-3" (click)="onSubmit()">Update</button>
+              <button id="button" type="submit" class="btn btn-primary m-3" (click)="goBack()">Go Back</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

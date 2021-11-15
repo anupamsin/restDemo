@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
 export class AddEmployeeComponent implements OnInit {
 
   employeeForm=new FormGroup({
-    id:new FormControl(),
+    empNo:new FormControl(),
     empName:new FormControl('',[Validators.required]),
     position:new FormControl('',[Validators.required]),
     salary:new FormControl('',[Validators.required]),
@@ -26,16 +26,9 @@ export class AddEmployeeComponent implements OnInit {
     if(this.employeeForm.valid) {
       this.employeeService.addEmployee(this.employeeForm.value).subscribe((data) => console.log(data));
       alert("Employee Added Successfully");
+      history.back();
     }else{
       alert("Employee Add Failed")
     }
-  }
-
-  selectEmp(id: number) {
-    this._router.navigate(['/updateEmp', id]);
-  }
-
-  onEdit() {
-
   }
 }

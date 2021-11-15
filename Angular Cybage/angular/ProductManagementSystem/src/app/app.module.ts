@@ -17,6 +17,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import {HttpClientModule} from "@angular/common/http";
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
+import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { AddEmployeeComponent } from './components/add-employee/add-employee.com
     ProductDetailComponent,
     EmployeeListComponent,
     AddEmployeeComponent,
+    EditEmployeeComponent,
   ],
   imports: [
     BrowserModule,

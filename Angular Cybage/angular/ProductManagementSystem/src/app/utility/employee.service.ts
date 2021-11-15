@@ -22,6 +22,16 @@ export class EmployeeService {
 
   updateEmployee(emp: Employee):Observable<Employee> {
     const httpOptions = {headers: new HttpHeaders({'Content-Type':'application/json'})};
-    return this._http.put<Employee>(this.baseURL+"/employee",emp,httpOptions);
+    return this._http.put<Employee>(this.baseURL+"/employee/",emp,httpOptions);
+  }
+
+  getEmployeeById(empNo: any):Observable<Employee> {
+    const httpOptions = {headers: new HttpHeaders({'Content-Type':'application/json'})};
+    return this._http.get<Employee>(this.baseURL+"/employee/"+empNo,httpOptions);
+  }
+
+  deleteEmployeeById(empNo: any):Observable<Employee>{
+    const httpOptions = {headers: new HttpHeaders({'Content-Type':'application/json'})};
+    return this._http.delete<Employee>(this.baseURL+"/employee/"+empNo,httpOptions);
   }
 }

@@ -8,6 +8,8 @@
           <h5 class="card-title">{{emp.empName}}</h5>
           <h3>{{emp.position}}</h3>
           <p class="card-text">{{emp.salary}}</p>
+          <button class="btn btn-primary" type="button" (click)="editEmp(emp.empNo)">Edit</button>
+          <button class="btn btn-primary ml-3" type="button" (click)="deleteEmp(emp.empNo)">Delete</button><br>
         </div>
       </div>
     </div>
