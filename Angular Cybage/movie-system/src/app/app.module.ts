@@ -31,6 +31,7 @@ import { AddMovieUsingTemplateComponent } from './components/add-movie-using-tem
 import { NavigationComponent } from './nav/navigation/navigation.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { TaskInfoReactiveComponent } from './components/task-info-reactive/task-info-reactive.component';
+import { ChoresDetailsComponent } from './components/chores-details/chores-details.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { TaskInfoReactiveComponent } from './components/task-info-reactive/task-
     AddMovieUsingTemplateComponent,
     NavigationComponent,
     MovieDetailComponent,
-    TaskInfoReactiveComponent
+    TaskInfoReactiveComponent,
+    ChoresDetailsComponent
   ],
   imports: [
     BrowserModule,

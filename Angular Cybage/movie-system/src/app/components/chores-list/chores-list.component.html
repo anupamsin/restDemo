@@ -1,62 +1,16 @@
-<!--<h1>{{title}}</h1>
-<ul *ngFor="let chore of chores">
-  <li>{{chore}}</li>
-</ul>
-<h1>{{title1}}</h1>
-<ul *ngFor="let chore1 of chores1">
-  <li>{{chore1}}</li>
-</ul>
-<h1>{{title2}}</h1>
-<ul *ngFor="let chore2 of chores2">
-  <li>{{chore2}}</li>
-</ul>
-
-<p *ngIf="chores1.length>chores.length" id="work">Work harder!</p>
-<div *ngIf="chores1.length==0 || chores1.length>=chores.length+3; else otherMsg">
-  <img src="https://www.generatormix.com/images/cartoon/tom.jpg" alt="Image Load failed">
-</div>
-<ng-template #otherMsg>
-  <p>No Allowance  yet</p>
-</ng-template>
-<div *ngIf="chores1.length==0 && chores.length>=4;else otherContent">
-  <h2>Ice cream treat!</h2>
-</div>
-<ng-template #otherContent>
-  <h3><p>How to earn an ice cream</p></h3>
-</ng-template>-->
-
-
-<div *ngFor="let chore of choresList">
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    {{chore.taskName}}
-  </button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Task Details</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <h3>Task Name : {{chore.taskName}}</h3>
-          <h4>Assigned Date : {{chore.assignedDate}}</h4>
-          <h4>Completion Date : {{chore.completionDate}}</h4>
-          <h5>Created By : {{chore.createdBy}}</h5>
-          <h5>Completed By : {{chore.completedBy}}</h5>
-          <h4>Completion Time : {{chore.completionTime}}</h4>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-<!--          <button type="button" class="btn btn-primary">Save changes</button>-->
+<h2 style="text-align:center">Chores List</h2>
+<div class="card-group" *ngFor="let chores of choress">
+  <div>
+    <div class="col-lg-4">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" [src]="choresImg" alt="Card image cap">
+        <div class="card-body">
+          <button class="btn btn-primary card-title" (click)="navigateTo(chores.taskName)">Task Name : {{chores.taskName}}</button>
+          <h4>Created By : {{chores.assignedBy}}</h4>
+          <p class="card-text">Assigned To : {{chores.assignedTo}}</p>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
+<br><br>

@@ -1,8 +1,8 @@
 export interface IChores{
   taskName:string;
-  assignedDate:string;
-  completionDate:string;
-  createdBy:string;
-  completedBy:string;
-  completionTime:string;
+  taskType:string;
+  taskStatus:string;
+  assignedBy:string;
+  assignedTo:string;
+  duration:string;
 }

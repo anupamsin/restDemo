@@ -5,13 +5,15 @@ import {AddMovieUsingTemplateComponent} from "./components/add-movie-using-templ
 import {ChoresListComponent} from "./components/chores-list/chores-list.component";
 import {MovieDetailComponent} from "./components/movie-detail/movie-detail.component";
 import {TaskInfoReactiveComponent} from "./components/task-info-reactive/task-info-reactive.component";
+import { ChoresDetailsComponent } from './components/chores-details/chores-details.component';
 
 const routes: Routes = [
   {path: 'movieList', component:MovieListComponent},
   {path: 'addMovie', component:AddMovieUsingTemplateComponent},
   {path: 'choresHome', component:ChoresListComponent},
   {path: 'addTask',component:TaskInfoReactiveComponent},
-  {path: 'movie/:id', component: MovieDetailComponent}
+  {path: 'movie/:id', component: MovieDetailComponent},
+  {path: 'chores/:taskName',component:ChoresDetailsComponent}
 ];
 
 @NgModule({

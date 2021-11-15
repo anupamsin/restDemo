@@ -1,0 +1,12 @@
+<div class="jumbotron jumbotron-icon">
+  <h3>Task Name : {{taskName}}</h3>
+  <h4>Task Type : {{chores.taskType}}</h4>
+  <h4 *ngIf="chores.taskStatus.match(false);else otherMsg">Task Status : Not Completed</h4>
+  <ng-template #otherMsg>
+    <h4>Task Status : Completed</h4>
+  </ng-template>
+  <h4>Assigned By : {{chores.assignedBy}}</h4>
+  <h4>Assigned To : {{chores.assignedTo}}</h4>
+  <h4>Task Completion Time : {{chores.duration}}</h4>
+</div>
+

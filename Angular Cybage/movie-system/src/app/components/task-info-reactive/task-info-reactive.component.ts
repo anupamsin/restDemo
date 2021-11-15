@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
+import {ChoresService} from "../../utility/chores.service";
 
 @Component({
   selector: 'app-task-info-reactive',
@@ -8,7 +9,7 @@ import {FormBuilder, Validators} from "@angular/forms";
 })
 export class TaskInfoReactiveComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,private choresService:ChoresService) {
   }
 
   ngOnInit(): void {
@@ -24,10 +25,11 @@ export class TaskInfoReactiveComponent implements OnInit {
 
   onSubmit() {
     if(this.addTaskForm.valid) {
+      this.choresService.addChores(this.addTaskForm.value);
       console.log(this.addTaskForm.value);
-      alert("Add Task Form Validation Success")
+      alert("Add Task Success")
     }else{
-      alert("Add Task Form Validation Failed!! Please Enter All Values")
+      alert("Add Task Failed!! Please Enter All Values")
     }
   }
 }
