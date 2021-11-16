@@ -1,4 +1,10 @@
-<p>movie-detail works!</p>
 <div class="jumbotron jumbotron-icon">
-  <h3>{{id}}</h3>
+  <div><img [src]="movie.poster" alt="Card image cap"></div>
+  <h3>Movie ID : {{id}}</h3>
+  <h4>Category : {{movie.category}}</h4>
+  <h4>Title : {{movie.title}}</h4>
+  <h4>Director Name : {{movie.directorName}}</h4>
+  <h4>Release Date : {{movie.releaseDate}}</h4>
+  <button type="button" class="btn btn-primary" (click)="goBack()">Go Back</button>
 </div>
+

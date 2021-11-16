@@ -20,4 +20,7 @@ export class ChoresDetailsComponent implements OnInit {
     this.chores = this.choresService.getChoresByName(this.taskName);
   }
 
+  goBack() {
+    history.back();
+  }
 }
